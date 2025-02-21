@@ -1,0 +1,2 @@
+# exercicios
+Exercicios em C++
