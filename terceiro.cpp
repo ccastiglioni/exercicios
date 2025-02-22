@@ -3,23 +3,21 @@
 #include <vector>  
 
 int main() {
-    std::ifstream arquivo_dados("/var/tmp/dados.txt");  // Abre o arquivo
+    std::ifstream arquivo_dados("/var/tmp/dados.txt");  
 
-    // Verifica se o arquivo foi aberto corretamente
     if (!arquivo_dados) {
         std::cerr << "Erro ao abrir o arquivo!" << std::endl;
         return 1;
     }
 
-    std::vector<int> meuvetor;  // Vetor para armazenar os números lidos
-    int num;  // Variável temporária para armazenar cada número lido
+    std::vector<int> meuvetor;    
+    int num;  
 
-    // Lê cada número do arquivo e adiciona ao vetor
     while (arquivo_dados >> num) {
         meuvetor.push_back(num);
     }
 
-    arquivo_dados.close();  // Fecha o arquivo
+    arquivo_dados.close(); 
 
     // Exibe os números lidos
     std::cout << "Números lidos do arquivo:" << std::endl;
