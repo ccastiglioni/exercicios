@@ -3,8 +3,10 @@ using namespace std;
 
 int main() {
     int a, b;
-    cout << "Digite dois números: ";
+    cout << "##### SOMA #### " << endl;
+    cout << "Digite dois valores (inteiros): ";
     cin >> a >> b;
-    cout << "A soma é: " << a + b << endl;
-    return 0;
+    cout << "Soma é:" << a + b << endl;
+    cout << "##### " << endl;
+    return 0;     
 }
