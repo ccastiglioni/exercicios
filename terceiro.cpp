@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
-#include <vector>  
+#include <set>
+#include <vector>
 
 int main() {
     std::ifstream arquivo_dados("/var/tmp/dados.txt");  
@@ -10,19 +11,19 @@ int main() {
         return 1;
     }
 
-    std::vector<int> meuvetor;    
-    int num;  
+    std::set<int> numeros_unicos;  // Armazena apenas valores únicos
+    int num;
 
     while (arquivo_dados >> num) {
-        meuvetor.push_back(num);
+        numeros_unicos.insert(num);  // Insere no set (ignora duplicados automaticamente)
     }
 
-    arquivo_dados.close(); 
+    arquivo_dados.close();
 
-    // Exibe os números lidos
-    std::cout << "Números lidos do arquivo:" << std::endl;
-    for (int num : meuvetor) {
-        std::cout << num << " ";
+    // Exibe os números lidos sem repetições
+    std::cout << "Números únicos lidos do arquivo:" << std::endl;
+    for (int numero : numeros_unicos) {
+        std::cout << numero << " ";
     }
     std::cout << std::endl;
 

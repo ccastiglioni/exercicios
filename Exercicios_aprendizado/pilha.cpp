@@ -12,7 +12,7 @@ int main() {
     for (int i = 0; i < tamanho; i++) {
         if (valor < arr[i]) {
             posicao = i;  // Encontramos a posição correta
-            break;
+            //break;
         }
         anterior = i;  // Atualiza o valor anterior
         cout << " " << valor << " < " << arr[i] << "\n"; 
