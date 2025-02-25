@@ -11,12 +11,14 @@ int main() {
         return 1;
     }
 
-    std::set<int> numeros_unicos;  // Para garantir que não há duplicatas
-    std::vector<int> vetor_numeros; // Vetor onde armazenaremos os números únicos
+    std::set<int> numeros_unicos;   
+    std::vector<int> vetor_numeros;  
 
     int num;
     while (arquivo_dados >> num) {
-        // Se o número ainda não está no set, adicionamos no set e no vetor
+      
+      //std::cout << "valors : " << num;
+      ///exit(0);
         if (numeros_unicos.insert(num).second) { 
             vetor_numeros.push_back(num);
         }
@@ -24,7 +26,7 @@ int main() {
 
     arquivo_dados.close();
 
-    // Exibe os números lidos sem repetições
+    
     std::cout << "Números únicos lidos do arquivo e armazenados no vetor:" << std::endl;
     for (int numero : vetor_numeros) {
         std::cout << numero << " ";
