@@ -1,18 +1,30 @@
 #include <iostream>
 using namespace std;
 
+// Definição do nó da lista
+struct Node {
+    int data;
+    Node* next;
+};
+
 int main() {
-    int x = 42;
-    int* p = &x;
-    
-    cout << "1. O endereço de x: " << &x << endl;
-    cout << "2. O valor de p: " << p << endl;
-    cout << "3. O valor de x usando p: " << *p << endl;
+    // Criando os nós manualmente
+    Node n1 = {5, nullptr};   // Primeiro nó
+    Node n2 = {10, nullptr};  // Segundo nó
+    Node n3 = {20, nullptr};  // Terceiro nó
 
-    *p = 99; // Alterando o valor de x através do SEU ponteiro
+    // Ligando os nós para formar a lista: 5 -> 10 -> 20 -> NULL
+    n1.next = &n2;
+    n2.next = &n3;
+    n3.next = nullptr;  // Último nó aponta para NULL
 
-    cout << "4. O novo valor de x: " << x << endl;
-    cout << "5. O novo valor de *p: " << *p << endl;
+    // Percorrendo a lista manualmente
+    Node* atual = &n1;  // Começa do primeiro nó
+    while (atual != nullptr) {
+        cout << atual->data << " -> ";
+        atual = atual->next;  // Avança para o próximo nó
+    }
+    cout << "NULL" << endl;  // Indica o final da lista
 
     return 0;
 }
