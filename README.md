@@ -16,8 +16,8 @@ Contudo, os números repetidos devem ser ignorados.
 # Exercicios Aula 2
 1) Baseado no código anterior (lista de Integer), construir um programa em Java que receba, via teclado do usuário, n nomes de pessoas. Assim como o primeiro código:
 
-I ) Não poderá haver nomes duplicados;
-II) ao final do cadastro, a lista precisará ser ordenada;
-III) o código deve permitir que o usuário digite um nome para pesquisa e o programa exclua esse nome da lista;
-IV) exiba novamente a lista.
+  I ) Não poderá haver nomes duplicados;
+  II) ao final do cadastro, a lista precisará ser ordenada;
+  III) o código deve permitir que o usuário digite um nome para pesquisa e o programa exclua esse nome da lista;
+  IV) exiba novamente a lista.
 
