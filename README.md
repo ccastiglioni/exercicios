@@ -20,4 +20,3 @@ Contudo, os números repetidos devem ser ignorados.
   II) ao final do cadastro, a lista precisará ser ordenada;
   III) o código deve permitir que o usuário digite um nome para pesquisa e o programa exclua esse nome da lista;
   IV) exiba novamente a lista.
-

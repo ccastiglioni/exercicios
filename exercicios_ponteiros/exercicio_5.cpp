@@ -34,9 +34,6 @@ int main() {
       cout << "valores :  " << array_dnc[i] << endl;
     }
     
-   
-
-    
     cout << endl;
     return 0;
 }
