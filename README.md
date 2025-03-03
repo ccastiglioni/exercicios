@@ -1,22 +1,30 @@
-# Exercicios Aula 1
-Exercicios em C++:
+# Exercícios Aula 1
 
-1- Programa em C/C++ que:
-  - Popule um vetor com n números inteiros e aleatórios (0 a 500)
-  - Exiba o vetor com os n números armazenados
-  - Insira no vetorPar os números pares e no vetorImpar os números ímpares
-  - Exiba o vetorPar
-  - Exiba o vetorImpar
+## Exercícios em C++
 
-2 - Programa em C/C++ que gere n números aleatórios e os armazene, um abaixo do outro, em um arquivo dados.txt
+1. **Programa em C/C++ que:**
+   - Popula um vetor com _n_ números inteiros aleatórios (entre 0 e 500);
+   - Exibe o vetor com os _n_ números armazenados;
+   - Insere no `vetorPar` os números pares e no `vetorImpar` os números ímpares;
+   - Exibe o `vetorPar`;
+   - Exibe o `vetorImpar`.
 
-3 - Programa em C/C++ que leia o arquivo dados.txt com números inteiros, um abaixo do outro, e os armazene em um vetor.
-Contudo, os números repetidos devem ser ignorados.
+2. **Programa em C/C++ que:**
+   - Gere _n_ números aleatórios;
+   - Armazene os números, um abaixo do outro, em um arquivo chamado `dados.txt`.
 
-# Exercicios Aula 2
-1) Baseado no código anterior (lista de Integer), construir um programa em Java que receba, via teclado do usuário, n nomes de pessoas. Assim como o primeiro código:
+3. **Programa em C/C++ que:**
+   - Leia o arquivo `dados.txt` contendo números inteiros (um por linha);
+   - Armazene esses números em um vetor, ignorando os números duplicados.
 
-  I ) Não poderá haver nomes duplicados;
-  II) ao final do cadastro, a lista precisará ser ordenada;
-  III) o código deve permitir que o usuário digite um nome para pesquisa e o programa exclua esse nome da lista;
-  IV) exiba novamente a lista.
+---
+
+# Exercícios Aula 2
+
+1. **Programa em Java baseado no código anterior (lista de Integer) que:**
+   - Receba, via teclado, _n_ nomes de pessoas;
+   - **Requisitos:**
+     - Não poderá haver nomes duplicados;
+     - Ao final do cadastro, a lista deverá ser ordenada;
+     - O programa deverá permitir que o usuário digite um nome para pesquisa e, se encontrado, exclua esse nome da lista;
+     - Exiba novamente a lista.
