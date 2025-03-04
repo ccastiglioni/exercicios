@@ -1,5 +1,4 @@
 package exercicios_ufn.aula2;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
@@ -13,15 +12,15 @@ public class Listanomes {
           
           // Solicitar a quantidade de usuários
           System.out.print("Digite quantos usuários deseja cadastrar: ");
-          int numeroUsers = scanner.nextInt();
-          scanner.nextLine();  
+          int numeroUsers = Integer.parseInt(scanner.nextLine());
+
   
           // Loop para cadastrar Arr_nomes
           for (int i = 0; i < numeroUsers; i++) {
               System.out.print("Digite o nome do usuário " + (i + 1) + ": ");
               String nome = scanner.nextLine().trim().toUpperCase();
               
-              if (!Arr_nomes.contains(nome)) {
+              if ( !Arr_nomes.contains(nome)) {
                   Arr_nomes.add(nome);
               } else {
                   System.out.println("Nome já cadastrado! Digite um nome diferente.");
@@ -51,6 +50,7 @@ public class Listanomes {
               System.out.println(nome);
           }
   
-          scanner.close(); // Fecha o scanner 
+          scanner.close(); 
       }
+  
 }
