@@ -14,9 +14,9 @@ public class Colecoes {
 
         Violao v1, v2, v3;
 
-        v1 = new Violao(6, "Clássico", 1500.0);
-        v2 = new Violao(6, "OM", 5000.5);
-        v3 = new Violao(7, "Choro", 9900.50);
+        v1 = new Violao(1,6, "Clássico", 1500.0);
+        v2 = new Violao(2,6, "OM", 5000.5);
+        v3 = new Violao(3,7, "Choro", 9900.50);
 
         // Adicionando os objetos às listas
         lv1.add(v1);
