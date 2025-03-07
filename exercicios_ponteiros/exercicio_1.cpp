@@ -23,6 +23,7 @@ cout << "valor que Pontiro está Apontando : "  << *p_var_1 << endl;
 
 *p_var_1 = *p_var_1 + 5;
 cout << "Depois Varival:"  << var_1 << endl;
+cout << "Depois de mudar o valor (continua o mesmo valor de Memoria): "  << p_var_1 << endl;
 
 
 cout << endl; return 0; 

@@ -19,9 +19,7 @@ int main() {
     int *array = new int[tamanho_arr];
     
     cout << "Digite " << tamanho_arr << " Elementos:" << endl;
-    
-    //cin >> array[1] ;
-    //cin >> array[2] ;
+    //cin >> array[1] ; //cin >> array[2] ;
     
     for (int i = 0; i < tamanho_arr; i++)
     {
@@ -30,7 +28,7 @@ int main() {
     
     for (int i = 0; i < tamanho_arr; i++)
     {
-       cout << "elementos digitados foram : " << array[i] << endl;
+       cout << "Elementos digitados foram : " << array[i] << endl;
     }
     
     delete[] array;

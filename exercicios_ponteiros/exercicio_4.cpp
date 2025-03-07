@@ -18,7 +18,8 @@ int encontrarMaior(int *px, int *py) {
   return maior;  // Retorna a cópia do maior valor
 }
 
-int* encontrarMaior_Val_Ref(int *px, int *py) { // Como retorna um ponteiro, é possível modificar o valor original no main() , sem fazer copia!
+// Como retorna um ponteiro, é possível modificar o valor original no main() , sem fazer copia!
+int* encontrarMaior_Ref_var_original(int *px, int *py) { 
   if (*px > *py) {
       return px;  // Retorna o próprio ponteiro para px
   } else {
@@ -35,9 +36,10 @@ int main() {
 
   cout << "Digite o valor para a variavel Y: " << endl;
   cin >>  var_y;
-  //func que receba dois ponteiros e retorne o maior valor
+  //func que receba dois ponteiros e retorne o maior valor, retorna uma Cópia do maior valor ,var_x e var_y permanecem Inalterados!
   v_return = encontrarMaior(&var_x,&var_y);
-  // int* maior = encontrarMaior(&var_x, &var_y); //Recebe um ponteiro para o maior valor
+  //retorna Ponteiro para o maior valor (int*),não faz copia
+  // int* maior = encontrarMaior_Ref_var_original(&var_x, &var_y); //Recebe um ponteiro para o maior valor
 
   cout << "Maior é : " << v_return << endl;
   cout << endl;
