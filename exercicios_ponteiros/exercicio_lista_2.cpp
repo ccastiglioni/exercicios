@@ -6,39 +6,37 @@ struct Node {
     Node* next;
 };
 
-// Função para inserir um novo nó no início da lista, com prints para visualizar melhor
-void insert(Node*& head, int value) {
-    cout << "Inserindo: " << value << endl;
- 
-    // Criando o novo nó
-    Node* newNode = new Node;
-    newNode->data = value;
-    cout << "Novo nó criado com data = " << newNode->data << endl;
+void insert(Node* &head, int val){
 
-    // O novo nó aponta para o atual primeiro nó da lista
-    newNode->next = head;
-    cout << "newNode->next agora aponta para o antigo head\n";
+   //new , data add , next
+   Node *novoNode = new Node; 
+   novoNode->data = val;
+   novoNode->next = head;
+   head = novoNode;
 
-    // Atualiza o head para apontar para o novo nó
-    head = newNode;
-    cout << "head agora aponta para o novo nó\n";
 
-    // Exibir a lista após a inserção
-    cout << "Lista atualizada: ";
-    Node* temp = head;
-    while (temp) {
-        cout << temp->data << " -> ";
-        temp = temp->next;
-    }
-    cout << "NULL" << endl << endl;
-}
+  }
 
 int main() {
-    Node* head = nullptr;  // Lista inicialmente vazia
+    //head é um ponteiro com atributo data e next e apontado para NULL
+    Node* head = nullptr;  
 
     insert(head, 10);
     insert(head, 20);
     insert(head, 30);
 
+    Node *p_temp = head; 
+    while (p_temp != nullptr)
+    {
+       cout << "p_temp:" << p_temp->data <<endl;
+       p_temp = p_temp->next;
+    }
+    
+    //outra forma de listagem!
+    for (Node* temp = head; temp != nullptr; temp = temp->next) {
+      cout << temp->data << " -> ";
+    }
+
+    cout << "### FIM ###"  << endl;
     return 0;
 }
