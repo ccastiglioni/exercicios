@@ -6,14 +6,12 @@ public class Violao {
     private String tipo;
     private double preco;
 
- 
     public Violao(int id, int qtdCordas, String tipo, double preco) {
         this.id = id;
         this.qtdCordas = qtdCordas;
         this.tipo = tipo;
         this.preco = preco;
     }
-
  
     public int getId() {
         return id;
@@ -43,7 +41,6 @@ public class Violao {
         this.preco = preco;
     }
 
- 
     @Override
     public String toString() {
         return "Violão: " + tipo + " | ID: " + id + " | Cordas: " + qtdCordas + " | Preço: R$ " + preco;

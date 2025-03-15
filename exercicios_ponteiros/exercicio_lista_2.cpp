@@ -13,8 +13,6 @@ void insert(Node* &head, int val){
    novoNode->data = val;
    novoNode->next = head;
    head = novoNode;
-
-
   }
 
 int main() {

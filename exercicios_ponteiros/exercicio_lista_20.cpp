@@ -1,18 +1,3 @@
-/* pergarTodoAnunciado
-Exercício: Implementação de Lista Encadeada Simples em C++
-Crie um programa que implemente uma Lista Encadeada Simples usando ponteiros. O programa deve:
-
-1. Criar uma estrutura (struct) chamada Node, que contém:
-Um campo dado para armazenar um número inteiro.
-Um ponteiro prox que aponta para o próximo nó da lista.
-
-2. Implementar as seguintes funções:
-inserirInicio: Insere um novo nó no início da lista.
-inserirFim: Insere um novo nó no final da lista.
-removerInicio: Remove o primeiro nó da lista.
-imprimirLista: Percorre e imprime todos os elementos da lista.
-3. No main(), permitir ao usuário inserir e remover elementos interativamente.
-*/
 #include <iostream>
 
 using namespace std;
@@ -61,12 +46,46 @@ void removerInicio(Node*& head) {
 
 // Função para imprimir os elementos da lista
 void imprimirLista(Node* head) {
+    if (head == nullptr) {
+        cout << "A lista está vazia!\n";
+        return;
+    }
+    
     Node* temp = head;
+    cout << "Lista Encadeada: ";
     while (temp != nullptr) {
         cout << temp->dado << " -> ";
         temp = temp->prox;
     }
     cout << "NULL\n";
+}
+
+// Função para ordenar a lista encadeada usando Bubble Sort
+void ordenarLista(Node* head) {
+    if (head == nullptr || head->prox == nullptr) {
+        return;  // Lista vazia ou com um único elemento já está ordenada
+    }
+
+    bool trocado;
+    Node* atual;
+    Node* ultimo = nullptr;
+
+    do {
+        trocado = false;
+        atual = head;
+
+        while (atual->prox != ultimo) {
+            if (atual->dado > atual->prox->dado) {
+                // Troca os valores dos nós
+                int temp = atual->dado;
+                atual->dado = atual->prox->dado;
+                atual->prox->dado = temp;
+                trocado = true;
+            }
+            atual = atual->prox;
+        }
+        ultimo = atual;  // O último elemento já está na posição correta
+    } while (trocado);
 }
 
 int main() {
@@ -75,10 +94,11 @@ int main() {
 
     do {
         cout << "\nMenu:\n";
-        cout << "1 - Inserir no início\n";
-        cout << "2 - Inserir no fim\n";
-        cout << "3 - Remover do início\n";
-        cout << "4 - Imprimir lista\n";
+        cout << "1 - Inserir no Início - LIFO (Last In, First Out) \n";
+        cout << "2 - Inserir no Fim - FIFO (First In, First Out) \n";
+        cout << "3 - Remover do Início\n";
+        cout << "4 - Imprimir Lista\n";
+        cout << "5 - Ordenar Lista\n";
         cout << "0 - Sair\n";
         cout << "Escolha uma opção: ";
         cin >> opcao;
@@ -99,6 +119,10 @@ int main() {
                 break;
             case 4:
                 imprimirLista(lista);
+                break;
+            case 5:
+                ordenarLista(lista);
+                cout << "Lista ordenada com sucesso!\n";
                 break;
             case 0:
                 cout << "Saindo...\n";

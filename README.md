@@ -28,3 +28,27 @@
      - Ao final do cadastro, a lista deverá ser ordenada;
      - O programa deverá permitir que o usuário digite um nome para pesquisa e, se encontrado, exclua esse nome da lista;
      - Exiba novamente a lista.
+
+1.1. **Programa em Java baseado no código anterior (lista de Integer) que:**
+   - Descobrir a diferença em Java de Vector, ArrayList e LinkedList. Construir exemplos.
+
+---
+
+# Exercícios Aula 4
+
+## Exercício: Listas de Disciplinas e Contagem de Alunos
+
+### Objetivo:
+Criar listas representando as disciplinas do curso de Ciência da Computação, associar alunos a essas disciplinas e contar quantas disciplinas cada aluno cursa.
+
+### Disciplinas e Alunos:
+- **Projeto Banco de Dados**: Andrisa, Matheus
+- **Estruturas de Dados**: Andrisa, Matheus
+- **Comunicação de Dados**: Andrisa
+
+### Implementação:
+- Criar _n_ listas representando as disciplinas do curso de Ciência da Computação.
+- Para cada lista, adicionar os alunos correspondentes.
+- Criar uma lista principal `cienciaComputacao` que armazene todas as listas de disciplinas.
+- Exibir o nome de cada aluno e a quantidade de disciplinas em que está matriculado.
+
