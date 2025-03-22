@@ -7,13 +7,12 @@ struct Node {
 };
 
 void insert(Node* &head, int val){
-
-   //new , data add , next
-   Node *novoNode = new Node; 
-   novoNode->data = val;
-   novoNode->next = head;
-   head = novoNode;
-  }
+  
+  Node *Pont = new Node;
+  Pont->data = val;
+  Pont->next = head;
+  head = Pont;
+}
 
 int main() {
     //head é um ponteiro com atributo data e next e apontado para NULL
@@ -30,10 +29,10 @@ int main() {
        p_temp = p_temp->next;
     }
     
-    //outra forma de listagem!
+    /* outra forma de listagem!
     for (Node* temp = head; temp != nullptr; temp = temp->next) {
       cout << temp->data << " -> ";
-    }
+    }*/
 
     cout << "### FIM ###"  << endl;
     return 0;

@@ -14,7 +14,6 @@ public class ListaAlunosConteins {
     public static void main(String[] args) {
         ArrayList<String> ProjetoDados = new ArrayList<>();
         ArrayList<String> EstruturaDados = new ArrayList<>();
-        ArrayList<String> BancoDados = new ArrayList<>();
         ArrayList<ArrayList<String>> CienciaComputacao = new ArrayList<>(); // Lista de listas
         
         ProjetoDados.add("Cleber");

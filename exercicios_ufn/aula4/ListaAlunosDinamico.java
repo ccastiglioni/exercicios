@@ -9,7 +9,7 @@ public class ListaAlunosDinamico {
 
         // Adicionando listas vazias manualmente para os índices 0 e 1
         CienciaComputacao.add(new ArrayList<String>()); // Índice 0
-        //CienciaComputacao.add(new ArrayList<String>()); // Índice 1
+        CienciaComputacao.add(new ArrayList<String>()); // Índice 1
 
         // Adicionando alunos à disciplina no índice 0
         CienciaComputacao.get(0).add("Cleber");
@@ -21,6 +21,7 @@ public class ListaAlunosDinamico {
         CienciaComputacao.get(1).add("Maria");
         CienciaComputacao.get(1).add("Leandro");
         CienciaComputacao.get(1).add("Marta");
+        CienciaComputacao.get(1).add("Pedro");
 
         // Lista auxiliar para contar alunos
         ArrayList<String> alunosContados = new ArrayList<>();

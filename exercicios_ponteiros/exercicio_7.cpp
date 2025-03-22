@@ -7,8 +7,7 @@ Criar um programa em C++ que utilize ponteiros e alocação dinâmica para armaz
 2️⃣ O programa aloca memória dinamicamente para armazenar os números.
 3️⃣ Os valores são inseridos do último para o primeiro elemento do array.
 4️⃣ O programa exibe o array preenchido.
-5️⃣ ?? O usuário pode consultar um elemento específico do array através de uma função com ponteiros.
-6️⃣ A memória alocada dinamicamente é liberada corretamente no final do programa.*/
+5️⃣ A memória alocada dinamicamente é liberada corretamente no final do programa.*/
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -29,7 +28,7 @@ int main() {
         cin >> *ptr;
     }
 
-    cout << "\n Array final preenchido: ";
+    cout << "\n Como ficou o Array preenchido: ";
     for (int num : array_dnc) {
         cout << num << " ";
     }

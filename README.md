@@ -52,3 +52,33 @@ Criar listas representando as disciplinas do curso de Ciência da Computação, 
 - Criar uma lista principal `cienciaComputacao` que armazene todas as listas de disciplinas.
 - Exibir o nome de cada aluno e a quantidade de disciplinas em que está matriculado.
 
+
+# Exercícios UFN - Aula 5: Geração de Emails
+
+## Descrição
+
+Este projeto tem como objetivo receber nomes completos de pessoas, validar se o nome foi digitado corretamente (ou seja, contém pelo menos duas palavras) e, a partir disso, gerar um email para cada pessoa. O email é formado combinando o primeiro nome com o último nome, separados por ponto, seguido de `@ufn.edu.br` (por exemplo, "João Pedro Garcia" gera o email `joao.garcia@ufn.edu.br`).
+
+Após a geração do email, o par (nome completo e email) é adicionado a uma lista, garantindo que não haja emails duplicados. O projeto exibe, ao final, a lista com os dados cadastrados.
+
+## Funcionalidades
+
+- **Validação do Nome Completo:**  
+  O programa verifica se o nome informado contém ao menos duas palavras, garantindo que o usuário digite seu nome completo.
+
+- **Geração do Email:**  
+  Converte o nome para letras minúsculas, remove acentos e utiliza o primeiro e o último nome para formar o email no padrão:  
+  `primeiroNome.ultimoNome@ufn.edu.br`
+
+- **Controle de Duplicidade:**  
+  Utiliza uma estrutura (como um HashSet) para evitar que sejam cadastrados emails repetidos.
+
+- **Armazenamento dos Dados:**  
+  Cada par (nome completo e email) é armazenado em um objeto da classe `Pessoa` e adicionado a uma lista.
+
+- **Exibição dos Dados:**  
+  Ao final, o programa imprime a lista com o nome completo e o email de cada pessoa cadastrada.
+ 
+
+
+

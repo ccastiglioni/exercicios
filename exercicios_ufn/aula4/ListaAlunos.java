@@ -1,4 +1,5 @@
 package exercicios_ufn.aula4;
+
 import java.util.ArrayList;
 
 public class ListaAlunos {
@@ -8,44 +9,43 @@ public class ListaAlunos {
         ArrayList<String> BancoDados = new ArrayList<>();
         ArrayList<ArrayList<String>> CienciaComputacao = new ArrayList<>(); // Lista de listas
 
-        // Adicionando alunos às disciplinas
+        // Adicionando alunos nas disciplinas
         ProjetoDados.add("Cleber");
         ProjetoDados.add("Maria");
         ProjetoDados.add("Leandro");
         ProjetoDados.add("Marta");
         CienciaComputacao.add(ProjetoDados);
-
+ 
         EstruturaDados.add("Carlos");
         EstruturaDados.add("Cleber");
         EstruturaDados.add("Maria");
         EstruturaDados.add("Luiz");
         CienciaComputacao.add(EstruturaDados);
-
-        BancoDados.add("Maria");
-        BancoDados.add("Marta");
-        BancoDados.add("João");
+        
+        BancoDados.add("Andrisa");
+        BancoDados.add("Matheus");
+        BancoDados.add("Cleber");
         CienciaComputacao.add(BancoDados);
 
+        // Lista para armazenar alunos já contados
         ArrayList<String> alunosContados = new ArrayList<>();
 
-        System.out.println("Listas na estrutura CienciaComputacao:");
+        System.out.println("\nNúmero de disciplinas por aluno:");
         
+        // Percorrer todas as disciplinas para contar as disciplinas de cada aluno
         for (ArrayList<String> listaDisciplina : CienciaComputacao) {
             for (String aluno : listaDisciplina) {
-                String nomeTmp = aluno;
-
-                if (!alunosContados.contains(nomeTmp)) {
+                // Verificar se o aluno já foi contado
+                if (!alunosContados.contains(aluno)) {
                     int contador = 0;
-                    alunosContados.add(nomeTmp);
-
-                    for (ArrayList<String> d : CienciaComputacao) {
-                        for (String a : d) {
-                            if (nomeTmp.equals(a)) {
-                                contador++;
-                            }
+                    // Percorrer novamente as disciplinas para contar as ocorrências do aluno
+                    for (ArrayList<String> listaBusca : CienciaComputacao) {
+                        if (listaBusca.contains(aluno)) {
+                            contador++;
                         }
                     }
-                    System.out.println("Aluno: " + nomeTmp + " está em " + contador + " disciplinas.");
+                    alunosContados.add(aluno);
+                    System.out.println(aluno + " cursa " + contador + " disciplina(s).");
                 }
             }
         }
