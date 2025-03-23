@@ -53,9 +53,9 @@ Criar listas representando as disciplinas do curso de Ciência da Computação, 
 - Exibir o nome de cada aluno e a quantidade de disciplinas em que está matriculado.
 
 
-# Exercícios UFN - Aula 5: Geração de Emails
+# Exercícios Aula 5
 
-## Descrição
+## Exercício: Geração de Emails
 
 Este projeto tem como objetivo receber nomes completos de pessoas, validar se o nome foi digitado corretamente (ou seja, contém pelo menos duas palavras) e, a partir disso, gerar um email para cada pessoa. O email é formado combinando o primeiro nome com o último nome, separados por ponto, seguido de `@ufn.edu.br` (por exemplo, "João Pedro Garcia" gera o email `joao.garcia@ufn.edu.br`).
 

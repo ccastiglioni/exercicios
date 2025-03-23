@@ -16,7 +16,6 @@ public class Pessoa {
         int totalPessoas = tecladoIn.nextInt();
         tecladoIn.nextLine(); // Consumir a quebra de linha
 
-        //String[] nomes = new String[totalPessoas];
         String strAviso = "";
         String email = "";
 
@@ -39,11 +38,10 @@ public class Pessoa {
             }
         }
 
-        
         System.out.println("\nLista de pessoas e emails adicionados:");
-        for (Map.Entry<String, String> entrada : pessoas.entrySet()) {
-            System.out.println("Nome: " + entrada.getValue());
-            System.out.println("Email: " + entrada.getKey());
+        for (Map.Entry<String, String> pessoaMap : pessoas.entrySet()) {
+            System.out.println("Nome: " + pessoaMap.getValue());
+            System.out.println("Email: " + pessoaMap.getKey());
             System.out.println("-----------------------------");
         }
         
