@@ -80,5 +80,32 @@ Após a geração do email, o par (nome completo e email) é adicionado a uma li
   Ao final, o programa imprime a lista com o nome completo e o email de cada pessoa cadastrada.
  
 
+Exercícios Aula 6
+Exercício: Cadastro de Alunos com Verificação de Email
+Este projeto tem como objetivo cadastrar alunos com nome completo e número de matrícula, gerando automaticamente um e-mail institucional no formato primeironome.ultimonome@ufn.edu.br. O sistema impede cadastros duplicados com base no e-mail gerado e, ao final, exibe a lista de alunos ordenada por nome.
+
+Funcionalidades
+Geração Automática de Email:
+A partir do nome completo informado, o sistema extrai o primeiro e o último nome (em letras minúsculas) e monta o e-mail no padrão:
+primeironome.ultimonome@ufn.edu.br
+
+Controle de Duplicidade via Email:
+O sistema não permite o cadastro de alunos com e-mails já existentes. A verificação de duplicidade é feita através da sobrescrita do método equals e hashCode na classe Aluno.
+
+Sobrescrita de Métodos (@Override):
+
+equals(Object o): verifica se dois alunos têm o mesmo e-mail.
+
+hashCode(): permite uso correto da classe em coleções baseadas em hash.
+
+toString(): exibe as informações do aluno de forma legível (matrícula, nome e email).
+
+Armazenamento dos Dados:
+Cada aluno é armazenado em uma lista dinâmica (ArrayList), com matrícula gerada automaticamente.
+
+Ordenação Alfabética:
+Ao final, os alunos são exibidos em ordem alfabética com base no nome.
+ 
+
 
 

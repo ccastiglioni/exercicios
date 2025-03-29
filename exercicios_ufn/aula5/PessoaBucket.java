@@ -10,12 +10,11 @@ public class PessoaBucket {
     public static void main(String[] args) {
         Scanner tecladoIn = new Scanner(System.in);
         
-        // O Java usa internamente um array de buckets para implementar HashMap
         Map<String, String> pessoas = new HashMap<>();
         
         System.out.println("Quantas pessoas deseja adicionar?");
         int totalPessoas = tecladoIn.nextInt();
-        tecladoIn.nextLine(); // consumir quebra de linha
+        tecladoIn.nextLine(); 
 
         String strAviso = "";
 
@@ -30,7 +29,6 @@ public class PessoaBucket {
                 if (!pessoas.containsKey(email)) {
                     pessoas.put(email, nome);
                 } else {
-                    // Demonstração prática de colisão em buckets do HashMap:
                     System.out.println("Colisão detectada! Email já existe no bucket do HashMap.");
                     email = gerarEmail(nome, true);
                     pessoas.put(email, nome);
@@ -42,12 +40,11 @@ public class PessoaBucket {
             }
         }
 
-        // Explicação detalhada do acesso eficiente por bucket:
         System.out.println("\nAcessando dados armazenados rapidamente usando buckets do HashMap:\n");
 
-        // Cada entrada do Map.Entry está alocada internamente em um bucket do HashMap.
         for (Map.Entry<String, String> entrada : pessoas.entrySet()) {
-            int bucketIndex = (entrada.getKey().hashCode() & (16 - 1)); // Considerando a capacidade inicial padrão (16 buckets)
+           // Considerando a capacidade inicial padrão (16 buckets)
+            int bucketIndex = (entrada.getKey().hashCode() & (16 - 1)); 
             System.out.println("Bucket [" + bucketIndex + "]: {Email: " + entrada.getKey() + ", Nome: " + entrada.getValue() + "}");
         }
 
