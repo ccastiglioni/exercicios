@@ -28,20 +28,21 @@ public class Principal {
                 matricula++;
             }
 
-            System.out.println("CONTINUA ? (s/n)");
+            System.out.println("CONTINUA ? (S/N)");
             opcao = scanner.nextLine();
 
-            if (!opcao.equals("s"))
+            if (opcao.equals("n"))
                 break;
         }
 
         alunos.sort((aluno1, aluno2)->aluno1.nome.compareTo(aluno2.nome));
 
         System.out.println("Relação de alunos:");
-        for (Aluno aluno : alunos) {
-            System.out.println(aluno);
+        for (Aluno objAluno : alunos) {
+            System.out.println(objAluno);
 
-          /*  public class PrintStream {
+          /* 
+           public class PrintStream {
            public void println(Object x) {
                String s = String.valueOf(x);
                synchronized(this) {
@@ -49,19 +50,15 @@ public class Principal {
                   this.newLine();
                }
             }
-
-          public final class String {
-            public static String valueOf(Object obj) {
-              return obj == null ? "null" : obj.toString();
-              }
-              }   
-
-          public String toString() {
-            return this.getClass().getName() + "@" + Integer.toHexString(this.hashCode());
-          }
+            public final class String {
+              public static String valueOf(Object obj) {
+                return obj == null ? "null" : obj.toString();
+                }
+            }   
+            public String toString() {
+              return this.getClass().getName() + "@" + Integer.toHexString(this.hashCode());
+            }
         */
-
-
         }
     }
 }

@@ -29,7 +29,10 @@ public class Aluno {
         return Objects.hash(this.email);
     }
 
- 
+    @Override
+    public String toString() {
+        return "Matricula: " + matricula + ", Nome: " + nome + ", Email: " + email;
+    }
 
  
 }
