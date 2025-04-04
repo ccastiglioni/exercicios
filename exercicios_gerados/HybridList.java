@@ -40,13 +40,13 @@ public class HybridList {
         acessoDireto.add(ana);
 
         // Acesso por índice
-        System.out.println("Acesso via índice (ArrayList):");
+        System.out.println("[] Acesso via índice (ArrayList):");
         for (int i = 0; i < acessoDireto.size(); i++) {
             System.out.println("Posição " + i + ": " + acessoDireto.get(i).valor);
         }
 
         // Percorrendo como lista ligada
-        System.out.println("\n Acesso encadeado (LinkedList):");
+        System.out.println("\n -> Acesso encadeado (LinkedList):");
         Node atual = acessoDireto.get(0); // começa do primeiro nó
 
         while (atual != null) {
