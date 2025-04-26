@@ -117,4 +117,33 @@ Os pontos devem estar armazenados em um arquivo texto, um ponto abaixo do outro,
 O programa deve ler o arquivo e popular seus dados em uma lista encadeada dinamicamente. 
 O usuário por sua vez, deve ser capaz de exibir esses dados e procurar por um ponto em especial.
 
+# Exercícios Aula 8
 
+## Exercício: Estruturas Dinâmicas em Java (Queue, Stack e HashSet)
+
+Este projeto tem como objetivo praticar a manipulação de filas, pilhas e tabelas hash em Java, trabalhando com inserção, remoção e controle de duplicidade de objetos.
+
+## Funcionalidades
+
+- **Simulação de Atendimento com Fila (Queue):**  
+  Utiliza duas filas (`filaUrgente` e `filaNormal`).  
+  A cada sorteio de número:
+  - `0`: Remove um processo da fila urgente.
+  - `100`: Remove um processo da fila normal.
+  - `1` a `99`: Insere novo processo na fila urgente, caso ainda não exista.
+  - `101` a `199`: Insere novo processo na fila normal, caso ainda não exista.  
+  Ao final, exibe os processos não atendidos.
+
+- **Gerenciamento de Processos com Pilha (Stack):**  
+  Utiliza duas pilhas (`pilhaInteiros` e `pilhaProcessos`).  
+  Realiza operações de:
+  - Inserção (`push()`);
+  - Remoção (`pop()`);
+  - Visualização do topo da pilha (`peek()`, comentado no código).  
+  Ao final, exibe os processos restantes na pilha.
+
+- **Cadastro de Peças com Tabela Hash (HashSet):**  
+  Utiliza uma tabela hash para armazenar peças (`HashSet<Peca>`).  
+  - Cada peça é identificada pelo seu código único.
+  - Não permite a inserção de peças duplicadas (código já existente).
+  - Exibe todas as peças cadastradas junto com seus códigos de hash.
