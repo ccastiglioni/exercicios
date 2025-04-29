@@ -1,5 +1,7 @@
-import java.util.Stack;
+package exercicios_ufn.aula8;
+
 import java.util.Scanner;
+import java.util.Stack;
 
 class Processo {
     int id;
@@ -38,13 +40,13 @@ public class Pilha {
         pilhaInteiros.push(1);
         pilhaInteiros.push(3);
 
-        System.out.println(pilhaInteiros.pop());        
-
+        System.out.println(pilhaInteiros.pop());
         System.out.println(pilhaInteiros);
 
         Stack<Processo> pilhaProcessos = new Stack<>();
 
-        //equals é chamado automaticamente pelo contains que algumas vezes é chamado pelo add
+        // equals é chamado automaticamente pelo contains que algumas vezes é chamado
+        // pelo add
         int id = 100;
         String descricao;
         Scanner teclado = new Scanner(System.in);
@@ -61,11 +63,10 @@ public class Pilha {
         System.out.println("retirando ....." + pilhaProcessos.pop());
         System.out.println("retirando ....." + pilhaProcessos.pop());
 
-        //System.out.println(pilhaProcessos.peek());
+        // System.out.println(pilhaProcessos.peek());
         for (Processo p : pilhaProcessos) {
             System.out.println(p);
         }
-
 
     }
 }
