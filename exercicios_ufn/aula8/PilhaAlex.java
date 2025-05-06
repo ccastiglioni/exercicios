@@ -32,7 +32,7 @@ class Processo {
     }
 }
 
-public class Pilha {
+public class PilhaAlex {
     public static void main(String a[]) {
         Stack<Integer> pilhaInteiros = new Stack<>();
 

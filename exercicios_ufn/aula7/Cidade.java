@@ -17,39 +17,38 @@ import java.util.Scanner;
 
 public class Cidade {
 
-  static class CidadeRs  {
-    String cidade;
-    String rs;
+    static class CidadeRs {
+        String cidade;
+        String rs;
 
-    public CidadeRs(String cidade, String rs) {
-        this.cidade= cidade;
-        this.rs= rs;
+        public CidadeRs(String cidade, String rs) {
+            this.cidade = cidade;
+            this.rs = rs;
+        }
+
+        public CidadeRs(String cidade) {
+            this.cidade = cidade;
+        }
+
+        public String getRs() {
+            return rs;
+        }
+
+        @Override
+        public String toString() {
+            return "Cidade: " + cidade + ", Estado:" + rs;
+        }
+
     }
 
-    public CidadeRs(String cidade) {
-      this.cidade= cidade;
-    }
-    
+    public static void main(String[] args) {
 
-    public String getRs() {
-      return rs;
-    }
-
-    @Override
-    public String toString() {
-        return "Cidade: " + cidade + ", Estado:" + rs;
-    }
-
-  }
-
-  public static void main(String[] args) {
-
-    ArrayList<CidadeRs> arrCidadeRs = new ArrayList<>();
+        ArrayList<CidadeRs> arrCidadeRs = new ArrayList<>();
         Scanner tecladoIn = new Scanner(System.in);
-     
-          String city ="";
-          String estado = "";
-          String opcao = "";
+
+        String city = "";
+        String estado = "";
+        String opcao = "";
         do {
             System.out.println("A - Adicionar Cidades");
             System.out.println("P - Procurar Por Cidade");
@@ -59,7 +58,7 @@ public class Cidade {
             System.out.print("Escolha uma opção: ");
             opcao = tecladoIn.nextLine();
 
-            switch (opcao) {
+            switch (opcao.toUpperCase()) {
                 case "A":
                     System.out.println("### Cadastro ###");
                     System.out.println("Digite Cidade:");
@@ -67,56 +66,69 @@ public class Cidade {
 
                     System.out.println("Digite o Estado:");
                     estado = tecladoIn.nextLine().toUpperCase();
-                    CidadeRs Objcidade = new CidadeRs( city,estado);
+                    CidadeRs Objcidade = new CidadeRs(city, estado);
                     arrCidadeRs.add(Objcidade);
                     break;
 
                 case "R":
-                System.out.println("### Remover cidade ###");
+                    System.out.println("### Remover cidade ###");
 
-                System.out.println("Digite a cidade para remover:");
-                city = tecladoIn.nextLine().toUpperCase();
-                              
-                CidadeRs objRemover = new CidadeRs(city);
-                if (arrCidadeRs.remove(objRemover)) {
-                    System.out.println("\n Cidade removido com sucesso!\n");
-                } else {
-                    System.out.println("\n Cidade não encontrado. Nada foi removido.\n");
-                }
-                break;
+                    System.out.println("Digite a cidade para remover:");
+                    city = tecladoIn.nextLine().toUpperCase();
+
+                    CidadeRs objRemover = new CidadeRs(city);
+                    if (arrCidadeRs.remove(objRemover)) {
+                        System.out.println("\n Cidade removido com sucesso!\n");
+                    } else {
+                        System.out.println("\n Cidade não encontrado. Nada foi removido.\n");
+                    }
+                    break;
 
                 case "L":
-                    //Collections.sort(arrCidadeRs);
-                    //arrCidadeRs.sort(null);
+                    // Collections.sort(arrCidadeRs);
+                    // arrCidadeRs.sort(null);
                     System.out.println("### Listagem  ###");
                     for (CidadeRs cd : arrCidadeRs) {
                         System.out.println(cd);
                     }
+                    System.out.println("############");
                     break;
                 case "P":
                     System.out.println("### Procurar Cidade  ###");
-                     System.out.println("Digite Cidade:");
-                     city = tecladoIn.nextLine();
-        
+                    System.out.println("Digite Cidade:");
+                    city = tecladoIn.nextLine();
+
                     CidadeRs Objprocurar = new CidadeRs(city);
-                    if (arrCidadeRs.contains(Objprocurar)){
-                      System.out.println("\n Cidade Encontrados!! :)\n");
-                      //System.out.println(" ESTADO: "+ arrCidadeRs.getRs() );
-                    }
-                    else{
-                      System.out.println("\nNÃO Encontrou  :(\n");
+                    if (arrCidadeRs.contains(Objprocurar)) {
+                        System.out.println("\n Cidade Encontrados!! :)\n");
+                        // System.out.println(" ESTADO: "+ arrCidadeRs.getRs() );
+                    } else {
+                        System.out.println("\nNÃO Encontrou  :(\n");
                     }
                     break;
 
+                case "S":
+                    System.out.print("Saindo");
+                    for (int i = 0; i < 5; i++) {
+                        try {
+                            Thread.sleep(500);
+                        } catch (InterruptedException e) {
+                            Thread.currentThread().interrupt();
+                        }
+                        System.out.print(".");
+                    }
+                    System.out.println();
+                    opcao = "s";
+                    break;
+
                 default:
+                    System.out.print("\033[H\033[2J");
+                    System.out.flush();
                     System.out.println("### Opção Invalida!  ###");
-                break;
+                    break;
             }
 
         } while (!opcao.equalsIgnoreCase("S"));
 
-
-
-    
-  }  
+    }
 }

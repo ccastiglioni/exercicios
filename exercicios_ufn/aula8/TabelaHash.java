@@ -1,5 +1,5 @@
+package exercicios_ufn.aula8;
 
-//https://github.com/alexandrezamberlan/estruturasDeDados/blob/master/2025/pilha_hash_fila/TabelaHash.java
 import java.util.HashSet;
 import java.util.Scanner;
 

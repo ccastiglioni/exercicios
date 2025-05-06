@@ -1,12 +1,37 @@
+/*
+Enunciado – Simulação de Atendimento com Filas Prioritárias
+Implemente um programa em Java que simule o funcionamento de duas filas de atendimento em uma empresa:
+ uma para processos urgentes e outra para processos normais.
+
+Cada processo deve ser representado por um objeto contendo:
+Um identificador numérico (id)
+Uma descrição (descricao)
+
+O programa deve:
+Gerar 1000 números aleatórios entre 0 e 199.
+
+A cada número gerado:
+Se for 0, remover (atender) o primeiro processo da fila urgente.
+Se for 100, remover (atender) o primeiro processo da fila normal.
+Se estiver entre 1 e 99, adicionar um novo processo urgente (caso ainda não esteja na fila).
+Se estiver entre 101 e 199, adicionar um novo processo normal (caso ainda não esteja na fila).
+
+Exibir no final:
+A quantidade de processos urgentes não atendidos, com a lista completa.
+A quantidade de processos normais não atendidos, com a lista completa.
+
+Utilize as classes Queue e LinkedList para implementar as filas.*/
+package exercicios_ufn.aula8;
+
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Random;
 
-class Processo {
+class ProcessoFila {
     int id;
     String descricao;
 
-    public Processo(int id, String descricao) {
+    public ProcessoFila(int id, String descricao) {
         this.id = id;
         this.descricao = descricao;
     }
@@ -24,7 +49,7 @@ class Processo {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        Processo other = (Processo) obj;
+        ProcessoFila other = (ProcessoFila) obj;
         if (id != other.id)
             return false;
         return true;
@@ -33,36 +58,32 @@ class Processo {
 
 public class Fila {
     public static void main(String[] args) {
-        Queue<Processo> filaNormal = new LinkedList<>();
-        Queue<Processo> filaUrgente = new LinkedList<>();
+        Queue<ProcessoFila> filaNormal = new LinkedList<>();
+        Queue<ProcessoFila> filaUrgente = new LinkedList<>();
 
-        //0 a 99 - processos urgentes - inserir na fila de urgentes
-        //100 a 199 - processos normais - inserir na fila de normais
-        //0 - remove cabeca fila urgente
-        //100 - remove cabeca fila normal 
         Random gerador = new Random();
         int numeroProcesso;
-        Processo processoAtendido;
+        ProcessoFila processoAtendido;
         for (int i = 0; i < 1000; i++) {
-            numeroProcesso = gerador.nextInt(200);
-            if (numeroProcesso == 0){
+            numeroProcesso = gerador.nextInt(200); /// random : 0 a 200
+            if (numeroProcesso == 0) {
                 if (!filaUrgente.isEmpty()) {
                     processoAtendido = filaUrgente.poll();
                     System.out.println("ATENÇÃO...Processo urgente atendido: " + processoAtendido.id);
-                }                 
+                }
             } else if (numeroProcesso == 100) {
                 if (!filaNormal.isEmpty()) {
                     processoAtendido = filaNormal.poll();
                     System.out.println("ATENÇÃO...Processo normal atendido: " + processoAtendido.id);
                 }
             } else if (numeroProcesso > 0 && numeroProcesso < 100) {
-                Processo tmp = new Processo(numeroProcesso,"processo urgente");
-                if (!filaUrgente.contains(tmp)){
+                ProcessoFila tmp = new ProcessoFila(numeroProcesso, "processo urgente");
+                if (!filaUrgente.contains(tmp)) {
                     System.out.println("Processo urgente inserido..." + tmp.id);
                     filaUrgente.add(tmp);
                 }
             } else {
-                Processo tmp = new Processo(numeroProcesso,"processo normal");
+                ProcessoFila tmp = new ProcessoFila(numeroProcesso, "processo normal");
                 if (!filaNormal.contains(tmp)) {
                     System.out.println("Processo normal inserido..." + tmp.id);
                     filaNormal.add(tmp);
@@ -71,15 +92,14 @@ public class Fila {
         }
 
         System.out.println("Processos urgentes não atendidos..." + filaUrgente.size());
-        for (Processo p : filaUrgente) {
+        for (ProcessoFila p : filaUrgente) {
             System.out.println(p);
         }
 
         System.out.println("Processos normais não atendidos..." + filaNormal.size());
-        for (Processo p : filaNormal) {
+        for (ProcessoFila p : filaNormal) {
             System.out.println(p);
         }
-
 
     }
 }

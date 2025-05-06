@@ -1,0 +1,43 @@
+o que é e para que serve recursão ? o programador, ao fazer um método recursivo, precisa garantir 3 situações.Quais ? Em que momento no código exemplo o empilhamento acontece ? Como é possível visualizar isso no código
+
+    void
+    mostraPares(int *v, int n)
+{
+    if (n > 0)
+    {
+        if (v[n - 1] % 2 == 0)
+            printf("%d\n", v[n - 1]);
+        mostraPares(v, n - 1);
+    }
+}
+
+Imagine o método recursivo contaPares().Ele deve contar os números pares de um vetor de inteiros de tamanho n.
+
+    int contaPares(int *v, int n)
+{
+    if (n > 0)
+    {
+        if (v[n - 1] % 2 == 0)
+        {
+            return 1 + contaPares(v, n - 1);
+        } /*else*/
+        return 0 + contaPares(v, n - 1);
+    }
+    return 0;
+}
+
+Imagine um método recursivo contaPares().Contudo, vai contar os números pares da uma lista encadeada simples.qual é o parâmetro ? qual é o tipo de retorno do método ?
+
+                                                                                                                                                                     E qual seria a variável de controle e no código do método como seria a chamada do método para garantir a recursão
+    int contaPares(Celula *l)
+{ // variavel de controle o l
+    if (l)
+    { // criterio de parada
+        if (l->dado % 2 == 0)
+        {
+            return 1 + contaPares(l->prox);
+        } /*else*/
+        return 0 + contaPares(l->prox);
+    }
+    return 0;
+}
